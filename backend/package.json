@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "backend": "file:",
     "mongoose": "^8.5.2",
     "nodemon": "^3.1.4"
   }
