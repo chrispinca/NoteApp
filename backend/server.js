@@ -3,11 +3,21 @@ import mongoose from "mongoose";
 import {PORT, mongoDBURL } from "./config.js";
 import Note from "./models/noteModel.js";
 import noteRoute from './routes/notesRoute.js';
+import cors from 'cors';
 
 //setup express
 const app = express();
 
 app.use(express.json());
+
+//cors policy
+app.use(
+    cors({
+        origin: 'http:localhost:3000',
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        allowedHeaders: ['Content-Type'],
+    })
+);
 
 //route for homepage
 app.get('/', (req, res) => {
