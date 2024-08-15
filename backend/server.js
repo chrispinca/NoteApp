@@ -91,6 +91,24 @@ app.put('/notes/:id', async (req, res) => {
     }
 });
 
+//route to delete a specific book
+app.delete('/notes/:id', async (req, res) => {
+    try {
+        const {id} = req.params;
+        const result = await Note.findByIdAndDelete(id);
+
+        if (!result) {
+            return response.status(200).send({message: error.message});
+        }
+
+        return res.status(200).send({message: 'Note deleted successfully'});
+
+    } catch (error) {
+        console.log(error.message);
+        response.status(500).send({message: error.message});
+    }
+});
+
 //mongoDB database connection
 mongoose
     .connect(mongoDBURL)
