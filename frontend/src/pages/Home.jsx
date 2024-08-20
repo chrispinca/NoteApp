@@ -80,7 +80,7 @@ const Home = () => {
                                             <AiOutlineEdit className="text-2xl text-blue-800" />
                                         </Link>
                                         <Link to={`/notes/delete/${note._id}`}>
-                                            <MdOutlineDelete className="text-2xl text-purple-800" />
+                                            <MdOutlineDelete className="text-2xl text-red-800" />
                                         </Link>
                                     </div>
                                 </td>
