@@ -9,15 +9,16 @@ import cors from 'cors';
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 //cors policy
-app.use(
+/*app.use(
     cors({
         origin: 'http:localhost:3000',
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type'],
     })
-);
+); */
 
 //route for homepage
 app.get('/', (req, res) => {
